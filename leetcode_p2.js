@@ -4,13 +4,14 @@
 // Output: [7,0,8]
 // Explanation: 342 + 465 = 807.
 
-let l1 = [2,4,3];
-let l2 = [5,6,4];
+let l1 = [9,9,9,9,9,9,9]
+let l2 = [9,9,9,9]
 
 var addTwoNumbers = function(l1, l2) {
     let number = 0;
     let numsArray = [];
     let result  = 0;
+    let exResult = [];
     for (let i = 0; i < arguments.length; i++ ){
         for (let j = 0; j < arguments[i].length; j++){
             if(j===0){
@@ -30,7 +31,12 @@ var addTwoNumbers = function(l1, l2) {
         result += numsArray[m];
     }
     result = result.toString();
-    console.log(result);
+
+    for(let n = 0; n < result.length; n++){
+        exResult.unshift(Number(result[n]))
+    }
+    console.log(exResult)
+    return exResult;
 };
 
 addTwoNumbers(l1, l2)
