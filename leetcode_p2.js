@@ -4,3 +4,33 @@
 // Output: [7,0,8]
 // Explanation: 342 + 465 = 807.
 
+let l1 = [2,4,3];
+let l2 = [5,6,4];
+
+var addTwoNumbers = function(l1, l2) {
+    let number = 0;
+    let numsArray = [];
+    let result  = 0;
+    for (let i = 0; i < arguments.length; i++ ){
+        for (let j = 0; j < arguments[i].length; j++){
+            if(j===0){
+                number = arguments[i][j];
+            }
+            else{
+                let eachNumber = arguments[i][j];
+                for (let k = 0; k < j; k++){
+                    eachNumber *= 10;
+                } 
+                number += eachNumber;
+            }
+        }
+        numsArray.push(number);
+    }
+    for(let m = 0; m < numsArray.length; m++){
+        result += numsArray[m];
+    }
+    result = result.toString();
+    console.log(result);
+};
+
+addTwoNumbers(l1, l2)
